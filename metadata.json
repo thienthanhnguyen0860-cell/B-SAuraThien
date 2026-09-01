@@ -1,0 +1,6 @@
+{
+  "name": "Aura Luxury Real Estate",
+  "description": "High-end real estate web platform for luxury villas, penthouses, apartments, and exclusive properties with booking and management features.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,209 @@
+{
+  "entities": {
+    "User": {
+      "collection": "users",
+      "fields": {
+        "uid": "string",
+        "email": "string",
+        "displayName": "string",
+        "phone": "string | null",
+        "photoURL": "string | null",
+        "role": "string",
+        "favorites": "string[]",
+        "createdAt": "Timestamp",
+        "updatedAt": "Timestamp",
+        "lastLoginAt": "Timestamp | null",
+        "status": "string"
+      }
+    },
+    "Property": {
+      "collection": "properties",
+      "fields": {
+        "id": "string",
+        "title": "string",
+        "slug": "string",
+        "propertyCode": "string",
+        "listingType": "string",
+        "propertyType": "string",
+        "status": "string",
+        "shortDescription": "string",
+        "description": "string",
+        "price": "number",
+        "priceUnit": "string",
+        "area": "number",
+        "bedrooms": "number",
+        "bathrooms": "number",
+        "floors": "number",
+        "parkingSlots": "number",
+        "direction": "string | null",
+        "projectId": "string | null",
+        "categoryId": "string | null",
+        "agentId": "string | null",
+        "address": "string",
+        "location": "object",
+        "amenities": "string[]",
+        "legalStatus": "string",
+        "images": "string[]",
+        "thumbnail": "string",
+        "videoUrl": "string | null",
+        "virtualTourUrl": "string | null",
+        "featured": "boolean",
+        "isHot": "boolean",
+        "isNew": "boolean",
+        "viewCount": "number",
+        "favoriteCount": "number",
+        "inquiryCount": "number",
+        "reservedByReservationId": "string | null",
+        "createdAt": "Timestamp",
+        "updatedAt": "Timestamp",
+        "publishedAt": "Timestamp | null",
+        "seo": "object"
+      }
+    },
+    "Project": {
+      "collection": "projects",
+      "fields": {
+        "id": "string",
+        "name": "string",
+        "slug": "string",
+        "developer": "string",
+        "projectType": "string",
+        "status": "string",
+        "address": "string",
+        "province": "string",
+        "district": "string",
+        "description": "string",
+        "thumbnail": "string",
+        "gallery": "string[]",
+        "latitude": "number | null",
+        "longitude": "number | null",
+        "totalUnits": "number",
+        "availableUnits": "number",
+        "minPrice": "number | null",
+        "maxPrice": "number | null",
+        "amenities": "string[]",
+        "featured": "boolean",
+        "createdAt": "Timestamp",
+        "updatedAt": "Timestamp",
+        "seo": "object"
+      }
+    },
+    "Inquiry": {
+      "collection": "inquiries",
+      "fields": {
+        "id": "string",
+        "userId": "string | null",
+        "propertyId": "string",
+        "propertyTitle": "string",
+        "fullName": "string",
+        "email": "string",
+        "phone": "string",
+        "message": "string",
+        "source": "string",
+        "status": "string",
+        "assignedAgentId": "string | null",
+        "adminNote": "string",
+        "createdAt": "Timestamp",
+        "updatedAt": "Timestamp"
+      }
+    },
+    "Reservation": {
+      "collection": "reservations",
+      "fields": {
+        "id": "string",
+        "reservationCode": "string",
+        "userId": "string",
+        "userEmail": "string",
+        "userName": "string",
+        "userPhone": "string",
+        "propertyId": "string",
+        "propertyTitle": "string",
+        "depositAmount": "number",
+        "transferContent": "string",
+        "status": "string",
+        "paymentMethod": "string",
+        "createdAt": "Timestamp",
+        "expiresAt": "Timestamp | null",
+        "approvedAt": "Timestamp | null",
+        "approvedBy": "string | null",
+        "cancelledAt": "Timestamp | null",
+        "adminNote": "string"
+      }
+    },
+    "PaymentSettings": {
+      "collection": "paymentSettings",
+      "fields": {
+        "id": "string",
+        "bankName": "string",
+        "bankCode": "string",
+        "accountName": "string",
+        "accountNumber": "string",
+        "branch": "string",
+        "qrTemplateUrl": "string | null",
+        "paymentInstructions": "string",
+        "reservationDepositDefault": "number",
+        "reservationExpiryMinutes": "number",
+        "updatedAt": "Timestamp"
+      }
+    },
+    "PaymentPublicSettings": {
+      "collection": "paymentPublicSettings",
+      "fields": {
+        "id": "string",
+        "bankName": "string",
+        "bankCode": "string",
+        "accountName": "string",
+        "accountNumber": "string",
+        "branch": "string",
+        "qrTemplateUrl": "string | null",
+        "paymentInstructions": "string",
+        "reservationDepositDefault": "number",
+        "reservationExpiryMinutes": "number",
+        "updatedAt": "Timestamp"
+      }
+    },
+    "PaymentPrivateSettings": {
+      "collection": "paymentPrivateSettings",
+      "fields": {
+        "id": "string",
+        "secretApiKey": "string | null",
+        "webhookSecret": "string | null",
+        "merchantId": "string | null",
+        "updatedAt": "Timestamp"
+      }
+    },
+    "AdminLog": {
+      "collection": "adminLogs",
+      "fields": {
+        "id": "string",
+        "adminId": "string",
+        "action": "string",
+        "entityType": "string",
+        "entityId": "string",
+        "description": "string",
+        "createdAt": "Timestamp"
+      }
+    },
+    "SiteSettings": {
+      "collection": "siteSettings",
+      "fields": {
+        "id": "string",
+        "siteName": "string",
+        "logoUrl": "string",
+        "faviconUrl": "string",
+        "hotline": "string",
+        "email": "string",
+        "address": "string",
+        "facebookUrl": "string",
+        "youtubeUrl": "string",
+        "zaloUrl": "string",
+        "hero": "object",
+        "stats": "object",
+        "footerDescription": "string",
+        "seo": "object",
+        "analytics": "object",
+        "updatedAt": "Timestamp"
+      }
+    }
+  }
+}

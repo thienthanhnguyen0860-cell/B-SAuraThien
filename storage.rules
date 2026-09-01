@@ -1,0 +1,26 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() &&
+        (request.auth.token.email == 'thienthanhnguyen0860@gmail.com' ||
+         firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'admin');
+    }
+
+    function isValidImage() {
+      return request.resource.size <= 10 * 1024 * 1024
+        && request.resource.contentType.matches('image/(jpeg|png|webp|gif|svg\\+xml)');
+    }
+
+    // Public read for properties/projects/avatars images
+    match /{allPaths=**} {
+      allow read: if true;
+      allow write: if isAdmin() && isValidImage();
+    }
+  }
+}
